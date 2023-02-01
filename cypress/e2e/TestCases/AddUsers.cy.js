@@ -8,6 +8,7 @@ describe ("user test" , function() {
 cy.login()
 const us = new User ()
 us.AddUserLicence ()
+us.AddUser ("James", "Smithson","account2023-2@test.com")
 cy.logout ()
 
 

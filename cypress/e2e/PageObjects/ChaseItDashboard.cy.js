@@ -24,7 +24,7 @@ class ChaseDashboard {
         cy.wait(3000)
         cy.log ("click on Collect-it  Aged Debtor")
 
-        cy.get("#collectInvoiceList > app-list > app-table > div > div.flex-table.header > div.flex-row.headerInvoiceid.ng-star-inserted > input") .check ()
+        cy.get("#collectInvoiceList > app-list > app-table > div > div.flex-table.header > div.flex-row.headerInvoiceid.ng-star-inserted > input") .check()
         cy.wait(3000)
         cy.log("check select all")
 
@@ -40,15 +40,14 @@ class ChaseDashboard {
         cy.log("Cross the pop up")
         cy.wait(3000)
 
-        cy.get("#agedDebtorsList > div > app-list > app-table > div > div:nth-child(2) > div.field_debtoractions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
-        cy.log ("click on Collect-it quote on the Aged Debtor")
+        cy.get("#agedDebtorsList > div > app-list > app-table > div > div:nth-child(4) > div.field_debtoractions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
+        cy.wait(3000)
+        cy.log ("click on Collect-it  Aged Debtor")
 
 
-        cy.get("#ourRef").type ("inv-0004")
-        cy.wait(3000)
-        cy.get("#ourRef").clear ().type('{enter}')
-        cy.wait(3000)
-        cy.get("#chase > app-invoice-list > app-modal > div > div > div").click ()
+        // cy.get("#ourRef").type ("inv-001-0")
+        // cy.wait(3000)
+        // cy.get("#chase > app-invoice-list > app-modal > div > div > div").click ()
        
 
         cy.get("#collectInvoiceList > app-list > app-table > div > div.flex-table.row.knowitRow.list-bottom-margin.ng-star-inserted > div.field_invoiceId.flex-row.ng-star-inserted > div > input").check ()

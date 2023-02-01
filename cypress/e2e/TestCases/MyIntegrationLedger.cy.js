@@ -9,7 +9,8 @@ describe ("Know-it Ledger management", function() {
         cy.login() 
         const ld = new  MyInt () 
         // ld. AddLedgerLicence ()
-        ld.AddNewLedger ()
+        // ld.AddNewQBLedger ()
+        ld.AddNewXeroLedger ()
         cy.logout () 
 
  })  
