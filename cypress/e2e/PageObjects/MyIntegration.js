@@ -63,7 +63,7 @@ class MyInt {
 
     cy.origin('https://appcenter.intuit.com', () => {
 
-      cy.get ("#idsDropdownTypeaheadTextField2").click ()
+      cy.get ("#app > div.shell-view > div > div > div.body > div > div > div > div > div.container-top > div > div:nth-child(3) > div > div > label > div > div > svg").click ()
       cy.wait(2000)
       cy.log("click on the search company dropdown")
 
@@ -77,21 +77,19 @@ class MyInt {
       cy.log ("Click on the next button")
 
       cy.get("#app > div.shell-view > div > div > div.body > div > div > div > div > div.authorize-actions-visual-update > form > button").click ()
-      cy.wait(2000)
+      cy.wait(10000)
       cy.log("click on the connect button")
-
    
        }) ;
 
 
        return this
 
-  
-    }
+      }
 
     AddNewXeroLedger (){
-    
-    
+
+            
    cy. get ("#container > app-navigation-bar > app-navigation-section.my-integrations.ng-star-inserted > header > h2") .click () ;
    cy. wait (3000) ;
    cy. log ("Click on My integrations tab") ;
@@ -104,11 +102,24 @@ class MyInt {
    cy.wait(3000)
    cy.log("Click on Xero ledger")
 
+
+   cy.origin('https://login.xero.com', () => {
+      
    cy.get ("#xl-form-email") .type ("nibesh@know-it.co.uk")
    cy.log("Enter xero username")
    cy.get("#xl-form-password") .type ("Kit@123456")
    cy.log("Enter xero password")
    cy.get("#xl-form-submit") .click ();
+   cy.wait(5000)
+   cy.log("Login to xero")
+})
+
+
+   cy.get ("#multipleTenants > div > button > span") .select (1) ;
+   cy.wait(2000)
+   cy.get("#approveButton") .click ()
+   cy.wait(3000)
+   cy.log("Select ledger and allow access")
 
 
    return this
