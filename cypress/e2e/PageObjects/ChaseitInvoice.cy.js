@@ -161,6 +161,5 @@ class ChaseInvoices {
      }
  
      
-    
-
  export default ChaseInvoices
+    

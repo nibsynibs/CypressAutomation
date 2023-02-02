@@ -1,6 +1,6 @@
 ///<reference types ="cypress"/>
 
-import ChaseInvoices  from "../PageObjects/ChaseitInvoice";
+import ChaseInvoices  from "../PageObjects/ChaseitInvoice.cy";
 
 describe ("Know-it chase-it invoices", function () {
    it ("Invoices" , function (){

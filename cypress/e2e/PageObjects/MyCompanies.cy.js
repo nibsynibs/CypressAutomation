@@ -35,6 +35,17 @@ class mycomp {
 
     }
 
+    Alerts () {
+
+        cy.get("#myCompaniesList > app-list > app-table > div > div:nth-child(3) > div.field_hasValidationIssues.flex-row.ng-star-inserted > div > span") .click ()
+        cy.wait(2000)
+        cy.log("click on issues")
+
+        cy.get("#myCompaniesList > app-list > app-modal.modal-centre.width-unset.height-auto.validationModal.ng-star-inserted > div > div > app-list > app-table > div > div:nth-child(2) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
+        cy.get("#myCompaniesList > app-list > app-modal.modal-centre.width-unset.height-auto.validationModal.ng-star-inserted > div > div > app-list > app-table > div > div:nth-child(3) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
+        cy.get("#myCompaniesList > app-list > app-modal.modal-centre.width-unset.height-auto.validationModal.ng-star-inserted > div > div > div") .click ()
+    }
+
 
     Companysearch (companyname) {
         cy.get ("#keywords").type(companyname)  
@@ -44,7 +55,7 @@ class mycomp {
         return this
     }
       
-    switchview (comp, ) {
+    switchview (comp) {
         cy.get ("#myCompaniesList > app-list > div.listToggle.ng-star-inserted > ul > li.gridMode.ng-star-inserted").click ()
         cy.wait(3000)
         cy.log("click on the companies grid view tab ")
