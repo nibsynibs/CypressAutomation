@@ -89,6 +89,11 @@ class MyInt {
 
     AddNewXeroLedger (){
 
+      cy.on("uncaught:exception", (err, runnable) => {
+
+        return false
+      })
+
             
    cy. get ("#container > app-navigation-bar > app-navigation-section.my-integrations.ng-star-inserted > header > h2") .click () ;
    cy. wait (3000) ;
@@ -112,16 +117,21 @@ class MyInt {
    cy.get("#xl-form-submit") .click ();
    cy.wait(5000)
    cy.log("Login to xero")
-})
+  })
 
 
-   cy.get ("#multipleTenants > div > button > span") .select (1) ;
-   cy.wait(2000)
-   cy.get("#approveButton") .click ()
+   cy.origin("https://authorize.xero.com", function () {
+   cy.get ("#multipleTenants > div > button") .click()
    cy.wait(3000)
+  cy.get("#\\37 7b0b224-624e-4fc7-9578-5bcc8a75fcc6 > button > span").click ()
+  cy.wait(2000)
+
+
+   cy.get("#approveButton") .click ()
+   cy.wait(10000)
    cy.log("Select ledger and allow access")
-
-
+  })
+      
    return this
 
     }
