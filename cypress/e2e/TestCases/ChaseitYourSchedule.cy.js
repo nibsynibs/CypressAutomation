@@ -1,6 +1,7 @@
 ///<reference types ="cypress"/>
 
-import yourschedule from "../PageObjects/ChaseitYourSchedule" ;
+import yourschedule from "../PageObjects/ChaseitYourSchedule.cy"
+
 
 describe ("Chase-it Your Schedule", function (){
 

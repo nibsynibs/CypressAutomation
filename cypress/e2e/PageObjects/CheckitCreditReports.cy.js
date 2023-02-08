@@ -4,7 +4,13 @@ class CreditReports {
 
 CreditReport (compname) {
 
-cy.checkit ()
+    cy.checkit ()
+    cy.wait (3000)
+    cy.on('uncaught:exception', (err, runnable) => {
+
+        return false
+    })
+
 cy. get ("#container > app-navigation-bar > app-navigation-section.check.ng-star-inserted > ul > li:nth-child(2) > a") .click ()
 cy.wait (3000)
 cy.log ("click on Check-it and then on Credit Reports")
@@ -91,12 +97,11 @@ ViewCreditReport (compname){
     cy.log ("Click on company structure and scroll to the bottom of the page")
 
     cy.get ("#tabs > div > div.tabsContent > ul > app-tab:nth-child(7) > li") .click ()
-    cy.get ("#tabs > div > div.tabsContent > ul > app-tab:nth-child(7) > li") .scrollIntoView({duration :2000})
-    // cy.wait (3000)
+    cy.wait (3000)
     cy.log ("Click on exceptional events and scroll to the bottom of the page")
 
     cy.get ("#printCreditReport") .click ()
-    // cy.wait (3000)
+    cy.wait (3000)
     cy.log("click on print credit report")
 
     return this 

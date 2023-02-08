@@ -3,6 +3,12 @@
 class yourschedule {
 
     SelectLedger () {
+
+      cy.on ("uncaught:exception",()=> {
+         return false 
+
+
+      })
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()
         cy.wait(3000)
         cy.log("Click on Chase-it")

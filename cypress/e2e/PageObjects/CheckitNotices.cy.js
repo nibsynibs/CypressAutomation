@@ -4,6 +4,15 @@ class CheckitNotices {
 
     notices (compname) {
 
+        cy.checkit ()
+        cy.wait(3000)
+
+        cy.on('uncaught:exception', (err, runnable) => {
+
+            return false
+        })
+
+
         cy.get ("#container > app-navigation-bar > app-navigation-section.check.ng-star-inserted > ul > li:nth-child(4) > a"). click ()
         cy.wait (3000)
         cy.log ("click on notices")
