@@ -7,10 +7,10 @@ class companieshouse {
         cy.checkit ()
         cy.wait(3000)
 
-        cy.on('uncaught:exception', (err, runnable) => {
+        // cy.on('uncaught:exception', (err, runnable) => {
 
-            return false
-        })
+        //     return false
+        // })
 
         cy.get ("#container > app-navigation-bar > app-navigation-section.check.ng-star-inserted > ul > li:nth-child(5) > a") .click ()
         cy.wait (2000)

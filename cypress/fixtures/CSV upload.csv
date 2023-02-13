@@ -1,0 +1,20 @@
+﻿company_name,companies_house_number,vat_registration_number,company_address_1_addressline1,company_address_1_addressline2,company_address_1_addressline3,company_address_1_town,company_address_1_region,company_address_1_postcode,contact_1_firstname,contact_1_lastname,contact_1_phonenumber,contact_1_mobilenumber,contact_1_email,contact_address_1_addressline1,contact_address_1_addressline2,contact_address_1_addressline3,contact_address_1_town,contact_address_1_region,contact_address_1_postcode
+ABC Testing,,,100 High Street,,,Glasgow,,G12 6GF,Steve,Smith,,,,100 High Street,,,,,G12 6GF
+Joe Bloggs,,,12a Drury Lane,,,Liverpool,,G12 6GF,Joe,Bloggs,,,,12a Drury Lane,,,,,L12 7GT
+Jobes Brothers -1,,,Unit 12,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 12,,,,,EH36 7GF
+Jobes Brothers -2,,,Unit 13,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 13,,,,,EH36 7GF
+Jobes Brothers -3,,,Unit 14,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 14,,,,,EH36 7GF
+Jobes Brothers -4,,,Unit 15,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 15,,,,,EH36 7GF
+Jobes Brothers -5,,,Unit 16,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 16,,,,,EH36 7GF
+Jobes Brothers -6,,,Unit 17,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 17,,,,,EH36 7GF
+Jobes Brothers -7,,,Unit 18,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 18,,,,,EH36 7GF
+Jobes Brothers -8,,,Unit 19,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 19,,,,,EH36 7GF
+Jobes Brothers -9,,,Unit 20,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 20,,,,,EH36 7GF
+Jobes Brothers -10,,,Unit 21,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 21,,,,,EH36 7GF
+Jobes Brothers -11,,,Unit 22,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 22,,,,,EH36 7GF
+Jobes Brothers -12,,,Unit 23,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 23,,,,,EH36 7GF
+Jobes Brothers -13,,,Unit 24,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 24,,,,,EH36 7GF
+Jobes Brothers -14,,,Unit 25,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 25,,,,,EH36 7GF
+Jobes Brothers -15,,,Unit 26,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 26,,,,,EH36 7GF
+Jobes Brothers -16,,,Unit 27,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 27,,,,,EH36 7GF
+Jobes Brothers -17,,,Unit 28,Keystone Industrial Estate,,Edinburgh,,G12 6GF,Susan,Jones,,,,Unit 28,,,,,EH36 7GF

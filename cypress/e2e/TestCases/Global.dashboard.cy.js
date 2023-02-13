@@ -8,8 +8,8 @@ describe ("know-it test for global dashboard",function(){
 
         const gd = new GlobalDashboard () ;
         gd.Dashboard ()
-        gd.Calendar ()
-        // gd.checkit ()
+        // gd.Calendar ()
+        gd.checkit ()
         // gd.chaseit ()
         // gd.collectit ()
 

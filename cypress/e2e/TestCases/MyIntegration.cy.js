@@ -1,6 +1,7 @@
 ///<reference types = "cypress"/>
 
-import MyInt from "../PageObjects/MyIntegration" 
+import MyInt from "../PageObjects/Integration.cy" 
+import "cypress-file-upload"
 
 describe ("Know-it Ledger management", function() {
  
@@ -10,11 +11,11 @@ describe ("Know-it Ledger management", function() {
         const ld = new  MyInt () 
         // ld. AddLedgerLicence ()
         // ld.AddNewQBLedger ()
-        ld.AddNewXeroLedger ()
+        // ld.AddNewXeroLedger ()
+        ld.CsvUpload ()
         cy.logout () 
 
  })  
 
 
 })
-    

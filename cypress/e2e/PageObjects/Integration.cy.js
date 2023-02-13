@@ -123,8 +123,8 @@ class MyInt {
    cy.origin("https://authorize.xero.com", function () {
    cy.get ("#multipleTenants > div > button") .click()
    cy.wait(3000)
-  cy.get("#\\37 7b0b224-624e-4fc7-9578-5bcc8a75fcc6 > button > span").click ()
-  cy.wait(2000)
+   cy.get("#\\37 7b0b224-624e-4fc7-9578-5bcc8a75fcc6 > button > span").click ()
+   cy.wait(2000)
 
 
    cy.get("#approveButton") .click ()
@@ -136,31 +136,50 @@ class MyInt {
 
     }
 
-    }
+    CsvUpload () {
 
-export default MyInt 
+        cy.on("uncaught:exception" , function () {
+  
+          return false
+  
+  
+        })
+  
+        cy.get ("#container > app-navigation-bar > app-navigation-section.my-companies.ng-star-inserted > header > h2") .click ()
+        cy.wait (3000)
+        cy.log("Click on My Companies")
+  
+        cy.get("#myCompanies > div > div > button") .click ()
+        cy.wait(3000)
+        cy.log("Click import customer")
+  
+        cy.get("#downloadCsvTemplateBox > div").click ()
+        cy.wait(3000)
+        cy.log("Download template")
+  
+        cy.get("#downloadCsvTemplateBox > app-button > button").click ()
+        cy.wait(3000)
+        cy.log("click next")
 
-
-
-         
-
-
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        cy.scrollTo('top')
+        cy.wait(5000)
     
+  
+        cy.get("#uploadCsvTemplateBox > div > p.selectFile").attachFile ("CSV upload.csv")     
+        // cy.get("#uploadCsvTemplateBox > div > p.selectFile").selectFile("new excel file-10.csv")
+        cy.wait(5000)
+        cy.get("#reviewDataBox > app-button").click ()  
+        cy.wait(5000)
+                 
+        cy.log("Click Select File and attach the file")
+  
+       return this
+  
+      }
+  
+      }
+  
+  export default MyInt
 
 
-
+  
