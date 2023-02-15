@@ -110,7 +110,7 @@ class MyInt {
 
    cy.origin('https://login.xero.com', () => {
       
-   cy.get ("#xl-form-email") .type ("nibesh@know-it.co.uk")
+   cy.get ("#xl-form-email") .type ("kitdemo30@know-it.co.uk")
    cy.log("Enter xero username")
    cy.get("#xl-form-password") .type ("Kit@123456")
    cy.log("Enter xero password")
@@ -123,7 +123,7 @@ class MyInt {
    cy.origin("https://authorize.xero.com", function () {
    cy.get ("#multipleTenants > div > button") .click()
    cy.wait(3000)
-   cy.get("#\\37 7b0b224-624e-4fc7-9578-5bcc8a75fcc6 > button > span").click ()
+   cy.get("#\\35 c28dead-9e97-4742-a778-4b6ebc9167cc > button > span").click ()
    cy.wait(2000)
 
 
@@ -163,12 +163,15 @@ class MyInt {
 
         cy.scrollTo('top')
         cy.wait(5000)
-    
+
+           
   
-        cy.get("#uploadCsvTemplateBox > div > p.selectFile").attachFile ("CSV upload.csv")     
+        cy.get("#uploadCsvTemplateBox > div > p.selectFile").attachFile("CSV upload")     
         // cy.get("#uploadCsvTemplateBox > div > p.selectFile").selectFile("new excel file-10.csv")
-        cy.wait(5000)
-        cy.get("#reviewDataBox > app-button").click ()  
+         cy.wait(5000)
+        cy.get("#reviewDataBox > app-button > button").click ()  
+                
+        
         cy.wait(5000)
                  
         cy.log("Click Select File and attach the file")
