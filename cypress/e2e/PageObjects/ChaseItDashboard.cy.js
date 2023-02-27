@@ -13,6 +13,7 @@ class ChaseDashboard {
         cy.log("click on the dashboard")
         cy.wait(3000)
 
+       
         
 
         return this
