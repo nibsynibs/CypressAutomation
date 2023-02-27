@@ -24,11 +24,14 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+///<reference types ="cypress-xpath"/>
+///<reference types = "cypress"/>
+
 
 Cypress.Commands.add ("login", () => {
     cy.visit("https://test.know-it.co.uk")
     cy.viewport (2000,1000)
-    cy.get ("#email").type ("account2023-16@test.com")
+    cy.get ("#email").type ("account2023-17@test.com")
     cy.get ("#password").type('Kit@12345678')
     cy.get  ("#loginForm > form > div.formButtons > app-button > button").click ()
     cy.wait (20000)

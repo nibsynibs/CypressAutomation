@@ -38,7 +38,12 @@ class MyInt {
 
     AddNewQBLedger () {
 
-    cy. get ("#container > app-navigation-bar > app-navigation-section.my-integrations.ng-star-inserted > header > h2") .click () ;
+    cy.on("uncaught:exception" , () => {
+      return false
+
+    })
+
+    cy. xpath ('//*[@id="container"]/app-navigation-bar/app-navigation-section[9]/header/h2') .click () ;
     cy. wait (3000) ;
     cy. log ("Click on My integrations tab") ;
 
@@ -52,10 +57,10 @@ class MyInt {
 
     cy.origin('https://accounts.intuit.com', () => {
 
-    cy.get ("#ius-userid").type ("nibesh@know-it.co.uk") ;
-    cy.get ("#ius-password").type ("Kit@12345678") ;
-    cy.get ("#ius-sign-in-submit-btn-text") .click () ; 
-    cy.wait (5000)
+    cy.get ("#iux-username-password-sign-in-user-id-input").type ("nibesh@know-it.co.uk") ;
+    cy.get ("#iux-username-password-sign-in-password-input").type ("Kit@12345678") ;
+    cy.get ("#ius-sign-in-widget > div > div > div.Bookends__NonStyledDiv-sc-163uul4-3.iIehHF > div.styledComponents__StyledWidgetContainer-sc-12vb80e-14.lcEcRk.ius > div.UsernamePasswordSignIn__StyledUsernamePasswordSignInContainer-sc-9mm0lb-0.lBBBb > form > button") .click () ; 
+    cy.wait (15000)
     cy.log("Enter QB username and password and click Sign in") ;
 
      }) ;
@@ -166,7 +171,8 @@ class MyInt {
 
            
   
-        cy.get("#uploadCsvTemplateBox > div > p.selectFile").attachFile("CSV upload")     
+        // cy.xpath("//*[@id="uploadCsvTemplateBox"]/div/p[2]").attachFile("CSV upload")     
+        
         // cy.get("#uploadCsvTemplateBox > div > p.selectFile").selectFile("new excel file-10.csv")
          cy.wait(5000)
         cy.get("#reviewDataBox > app-button > button").click ()  

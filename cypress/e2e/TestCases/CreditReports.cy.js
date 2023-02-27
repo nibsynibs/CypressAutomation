@@ -7,9 +7,9 @@ describe("Know-it Credit Reports", function () {
  
 cy.login ()
 const cr = new CreditReports ()
-cr.CreditReport ("JOHNSON, JOHNSON & JOHNSON LIMITED")
-cr.Repurchase ("JOHNSON, JOHNSON & JOHNSON LIMITED")
-cr.ViewCreditReport ("JOHNSON, JOHNSON & JOHNSON LIMITED")
+cr.CreditReport ("TWININGS BIDCO LIMITED")
+cr.Repurchase ("TWININGS BIDCO LIMITED")
+cr.ViewCreditReport ("TWININGS BIDCO LIMITED")
 cy.logout ()
 
 })
