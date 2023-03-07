@@ -6,7 +6,7 @@ CreditReport (compname) {
 
     cy.checkit ()
     cy.wait (3000)
-    cy.on('uncaught:exception', (err, runnable) => {
+    cy.on('uncaught:exception', () => {
 
         return false
     })

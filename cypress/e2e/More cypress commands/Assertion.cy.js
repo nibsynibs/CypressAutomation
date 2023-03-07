@@ -54,4 +54,3 @@ describe ("more cypress commands" , function () {
 
 })
 
-//*[@id="typeahead-suggestions"]/div/a[3]/div[1]/h3
