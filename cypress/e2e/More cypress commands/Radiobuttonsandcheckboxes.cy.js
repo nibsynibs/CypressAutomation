@@ -23,7 +23,7 @@ describe ("Radio buttons and checkboxes", () => {
     //Selecting multiple checkboxes
     //Create xpath with element common in all the checkboxes.
     //Instead of ('//*[@id="monday"]'), ('//*[@type ="checkbox"]'). 
-    //type=checkbox is common in all the checkboxes so we an select all with just 1 cy.xpath
+    //type=checkbox is common in all the checkboxes so we can select all with just 1 cy.xpath
 
     cy.xpath("//input[@type='checkbox']") .check (). should("be.checked")
     cy.xpath("//input[@type='checkbox']").uncheck().should ("not.be.checked")
@@ -31,6 +31,13 @@ describe ("Radio buttons and checkboxes", () => {
     //Selecting only the first and or the last checkbox
     cy.xpath("//input[@type='checkbox']") .first().check () .should ("be.checked")
     cy.xpath("//input[@type='checkbox']") .last().check () .should ("be.checked")
+
+    //Assert the number of fields with checkboxes.
+    cy.xpath("//input[@type='checkbox']") .should ('have.value', 11)
+    
+
+
+    
 
 
 
