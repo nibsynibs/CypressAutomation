@@ -27,7 +27,7 @@ class mycomp {
     //check cell data from specific row or column
     cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[6]/div[3]').contains ('11226650')
 
-    //Read all the rows and column data
+    //Read all the rows and column data from one page
 
     cy.xpath('//div[@role="table"]')
      .each( ($row, index, $rows) => {
@@ -35,9 +35,21 @@ class mycomp {
         cy.wrap($row).within( () => {
             cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]').each(($col,index,$cols) => {
                 cy.log($col.text()) ;
-
-
+                          
             })
+
+             //Read all the rows and column data from all 3 pages
+
+            let totalpage= 3
+            for (let p=1 ;p<=totalpage; p++){
+
+                if(totalpage>1){
+
+                    cy.log("Active Page is===+p")
+                    cy.xpath('//input[@xpath="2"]').type()                }
+            
+
+            }
 
 
         })
