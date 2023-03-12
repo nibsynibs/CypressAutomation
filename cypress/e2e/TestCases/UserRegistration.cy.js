@@ -5,7 +5,7 @@ describe ("user registreation" , function () {
 
         const re = new Registration ()
         re.logintoURL ()
-        re.UserReg ("Jack" ,"Fruit" ,"account2023-100@test.com" , "Kit@12345678")
+        re.UserReg ("Jack" ,"Fruit" ,"account2023-105@test.com" , "Kit@12345678")
 
 
 

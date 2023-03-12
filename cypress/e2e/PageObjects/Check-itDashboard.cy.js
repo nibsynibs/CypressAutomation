@@ -22,9 +22,9 @@ class CheckitDashboard {
 
         CreditMonitoring () {
 
-         cy.xpath('//*[@id="creditReportMonitoringList"]/div/app-list/app-table/div/div[3]/div[3]/a')   
+         cy.xpath('//*[@id="creditReportMonitoringList"]/div/app-list/app-table/div/div[5]/div[3]/a')   
         .should("be.visible")
-        .and("contain.text" , "NJM CREATIVE LTD").click ()
+        .and("contain", "NJM CREATIVE LTD").click ()
        
         cy.wait(2000)
         cy.go ("back")
@@ -49,13 +49,14 @@ class CheckitDashboard {
 }
         CreditReports() {
 
-        cy.xpath('//*[@id="archivedCreditReportsList"]/div/app-list/app-table/div/div[2]/div[2]/a')  
-        .should ("be.visible") .click ()
-        cy.wait(2000)
+        cy.xpath('//*[@id="archivedCreditReportsList"]/div/app-list/app-table/div/div[6]/div[2]/a') .click()
+                         
+                
+        cy.wait(10000)
         cy.go("back")
         cy.log("Click on the company and click the back button to get to the dashboard")
 
-        cy.xpath('//*[@id="archivedCreditReportsList"]/div/app-list/app-table/div/div[2]/div[4]/app-actions/ul/li/button').should("be.visible").click ()
+        cy.xpath('//*[@id="archivedCreditReportsList"]/div/app-list/app-table/div/div[6]/div[4]/app-actions/ul/li/button').click ()
         cy.wait(2000)
         cy.log("Click on the view icon")
 

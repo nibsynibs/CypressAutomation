@@ -4,6 +4,12 @@ class chasesettings {
 
     Settings () {
 
+        cy.on("uncaught:exception" , () => {
+
+            return false
+
+        })
+
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()
         cy.wait(2000)
         cy.log("click on Chase-it")

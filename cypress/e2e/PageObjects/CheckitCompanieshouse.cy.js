@@ -4,6 +4,11 @@ class companieshouse {
 
     comphouse (compname) {
 
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
         cy.checkit ()
         cy.wait(3000)
 

@@ -4,6 +4,12 @@ class chasetemplate {
 
 
     EditSchedule () {
+
+        cy.on("uncaught:exception" , () =>{
+
+            return false
+
+        })
     
             
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()

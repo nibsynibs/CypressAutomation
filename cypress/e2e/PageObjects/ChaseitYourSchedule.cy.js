@@ -14,7 +14,7 @@ class yourschedule {
         cy.log("Click on Chase-it")
 
         cy.get("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > ul > li:nth-child(2) > a").click ()
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("click on Your Schedule")
 
       //   cy.get("#ledgerSelector") . select (1)

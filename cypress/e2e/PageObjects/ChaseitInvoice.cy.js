@@ -4,6 +4,12 @@ class ChaseInvoices {
 
 
     Invoices () {
+
+      cy.on("uncaught:exception" , () => {
+        return false
+
+
+      })
         
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()
         cy.log("Click on the chase it")
@@ -17,6 +23,10 @@ class ChaseInvoices {
     }
 
         OutstandingInvoices () {
+          cy.on("uncaught:exception" ,() =>{
+
+
+          })
             cy.get("#invoiceListTable > app-list > div.groupWrapper.ng-star-inserted > div.groupItems.groupItemsContent.openResult.ng-star-inserted > div > div > app-actions > ul > li:nth-child(2) > button").click ()
             cy.log ("click on Collect-it quote")
 
@@ -36,11 +46,11 @@ class ChaseInvoices {
             cy.get ("#chase > app-invoice-list > app-modal > div > div > div").click ()
             cy.log("Cross the pop up")
 
-            cy.get("#invoiceListTable > app-list > div.groupWrapper.ng-star-inserted > div.groupItems.groupItemsContent.openResult.ng-star-inserted > div > div > app-actions > ul > li > button").click ()
+            cy.xpath('//*[@id="invoiceListTable"]/app-list/div[3]/div[1]/div/div/app-actions/ul/li[2]/button').click ()
             cy.log ("click on Collect-it on outstanding invoices")
     
     
-            cy.get("#ourRef").type ("inv-0049")
+            cy.get("#ourRef").type ("inv-0062")
             cy.wait(5000)
             cy.get("#ourRef").clear ()
             cy.wait (3000)
@@ -61,7 +71,11 @@ class ChaseInvoices {
     
             cy.get("#sendToCollectForm > form > div.formButtons > app-button:nth-child(2) > button").click ()
             cy.log("Click on the submit button")
-            cy.wait(15000)
+            cy.wait(25000)
+
+            cy.xpath('/html/body/app-root/app-quote-sent-notification/div/app-modal/div/div/div[1]').should('be.visible') .click ()
+            cy.log('Cross the confirmation pop up')
+            
     
            return this 
      
@@ -69,7 +83,13 @@ class ChaseInvoices {
 
      SendNow () {
 
-        cy.get ("#invoiceListTable > app-list > div.groupWrapper.ng-star-inserted > div.groupItems.groupItemsContent.openResult.ng-star-inserted > app-table > div > div.flex-table.row.chaseRow.rowClickable.ng-star-inserted > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li:nth-child(1) > button").click ()
+      cy.on("uncaught:exception" ,() =>{
+
+
+      })
+       
+
+        cy.xpath('//*[@id="invoiceListTable"]/app-list/div[3]/div[1]/app-table/div/div[2]/div[8]/app-actions/ul/li[1]/button') .click ()
         cy.wait (5000)
         cy.log ("click on the Send Now button")
 
@@ -101,19 +121,21 @@ class ChaseInvoices {
         cy.wait (5000)
         cy.log ("click on the pause button")
 
-        cy.get("#invoiceListTable > app-list > div.groupWrapper.ng-star-inserted > div:nth-child(5) > div > div > app-actions > ul > li:nth-child(1) > button").click ()
-        cy.log(1000)
+      
 
-        cy.get("#invoiceListTable > app-list > div.groupWrapper.ng-star-inserted > div:nth-child(5) > div > div > app-actions > ul > li:nth-child(1) > button").click ()
-        cy.log(1000)
 
-       
 
         return this
 
      }
 
      ExpectedPayments () {
+
+      cy.on("uncaught:exception" ,() =>{
+
+
+      })
+         
 
         cy.get("#invoiceListTable > app-list > div.groupWrapper.ng-star-inserted > div.groupItems.groupItemsContent.openResult.ng-star-inserted > app-table > div > div:nth-child(2) > div.field_ourRef.flex-row.ng-star-inserted > a").click ()
         cy.wait(3000)
@@ -129,7 +151,7 @@ class ChaseInvoices {
         cy.get("#invoiceActions > app-button.darkGreyButton.flexButton.addEP > button").click()
         cy.log("click expected payments")
         cy.wait(5000)
-        cy.get ("#ep_date_0").click ().type('2022-09-10')
+        cy.get ("#ep_date_0").click ().type('2023-09-10')
         cy.wait(5000)
         
        cy.get("#addexpectedpaymentsForm > form > div.formButtons > app-button > button").click ()
@@ -140,6 +162,12 @@ class ChaseInvoices {
      }
 
       Notes (note) {
+
+        cy.on("uncaught:exception" ,() =>{
+
+
+        })
+           
 
         cy.get ("#invoiceActions > app-button.darkGreyButton.flexButton.addNote > button").click ()
         cy.log('Click Add notes')

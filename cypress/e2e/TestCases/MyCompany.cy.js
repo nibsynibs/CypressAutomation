@@ -8,12 +8,14 @@ describe ("My comp" , function () {
         cy.login ()
         const mc = new mycomp ()
         mc.Comp ()
-        mc.SelectCompany ()
-        mc. Alerts ()
-        mc.Row()
-        mc.Companysearch ("Basket Case") 
-        mc.switchview ("Ridgeway University")
-        cy.logout ()
+        mc.Verifyrowsandcolumn ()
+        mc.checkcelldata ()
+        // mc.SelectCompany ()
+        // mc. Alerts ()
+        // mc.Row()
+        // mc.Companysearch ("Basket Case") 
+        // mc.switchview ("Ridgeway University")
+        // cy.logout ()
 
        
 

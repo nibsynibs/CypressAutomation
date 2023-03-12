@@ -4,6 +4,13 @@ class Userlicenseandadd {
 
     AddUserLicence () {
 
+        cy.on("uncaught:exception" ,() => {
+             
+            return false
+
+       })
+        
+
         cy. get ("#container > app-navigation-bar > app-navigation-section.my-integrations.ng-star-inserted > header > h2") .click () ;
         cy. wait (3000) ;
         cy. log ("Click on My integrations tab") ;

@@ -1,6 +1,6 @@
 ///<reference types = "cypress"/>
 
-import chasesettings from "../PageObjects/ChaseitSettings" ;
+import chasesettings from "../PageObjects/ChaseitSettings.cy" ;
 
 describe ("Chase-it settings" , function () {
    

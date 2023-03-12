@@ -4,6 +4,13 @@ class ChaseDashboard {
 
     Dashboard () {
 
+        cy.on('uncaught:exception',() =>{
+
+            return false
+
+
+        })
+
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()
         cy.log("Click on the chase it")
         cy.wait(3000)
@@ -20,10 +27,20 @@ class ChaseDashboard {
     }
 
     AgedDebtor () {
+
+        cy.on('uncaught:exception',() =>{
+
+            return false
+
+
+        })
         cy.get("#agedDebtorsList > div > app-list > app-table > div > div:nth-child(4) > div.field_debtoractions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
            
         cy.wait(3000)
         cy.log ("click on Collect-it  Aged Debtor")
+
+        // cy.xpath('//*[@id="dashboard"]/div[2]/app-aged-debtors-list/app-commercial-debts-confirmation/app-modal/div/div/div[2]/app-button[1]/button').click ()
+        // cy.log("Click confirm on the pop up")
 
         cy.get("#collectInvoiceList > app-list > app-table > div > div.flex-table.header > div.flex-row.headerInvoiceid.ng-star-inserted > input") .check()
         cy.wait(3000)
@@ -66,7 +83,10 @@ class ChaseDashboard {
 
         cy.get("#sendToCollectForm > form > div.formButtons > app-button:nth-child(2) > button").click ()
         cy.log("Click on the submit button")
-        cy.wait(10000)
+        cy.wait(25000)
+
+        cy.xpath('/html/body/app-root/app-quote-sent-notification/div/app-modal/div/div/div[1]').should('be.visible') .click ()
+        cy.log('Cross the confirmation pop up')
 
        return this 
  

@@ -11,6 +11,47 @@ class mycomp {
 
     }
 
+ Verifyrowsandcolumn () {
+ cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') .should ('have.length', '20')
+ cy.log("Count the total number of rows.")
+
+ cy.xpath('//div[@role="columnheader"]') .should ('have.length', '9')
+ cy.log("count the nimber of columns")
+
+ return this
+
+    }
+
+    checkcelldata (){
+
+    //check cell data from specific row or column
+    cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[6]/div[3]').contains ('11226650')
+
+    //Read all the rows and column data
+
+    cy.xpath('//div[@role="table"]')
+     .each( ($row, index, $rows) => {
+
+        cy.wrap($row).within( () => {
+            cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]').each(($col,index,$cols) => {
+                cy.log($col.text()) ;
+
+
+            })
+
+
+        })
+
+     })
+
+    return this
+
+
+
+    }
+
+
+
     SelectCompany () {
         cy.get("#myCompaniesList > app-list > app-table > div > div:nth-child(3) > div.field_ledgerCompanyName.flex-row.ng-star-inserted > a").click ()
         cy.wait(5000)

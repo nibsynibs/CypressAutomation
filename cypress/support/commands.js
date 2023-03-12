@@ -31,7 +31,7 @@
 Cypress.Commands.add ("login", () => {
     cy.visit("https://test.know-it.co.uk")
     cy.viewport (2000,1000)
-    cy.get ("#email").type ("account2023-17@test.com")
+    cy.get ("#email").type ("account2023-105@test.com")
     cy.get ("#password").type('Kit@12345678')
     cy.get  ("#loginForm > form > div.formButtons > app-button > button").click ()
     cy.wait (20000)
@@ -56,6 +56,14 @@ Cypress.Commands.add ("chaseit",()=>{
     cy.wait(3000)
     cy.log("Click on chase it")
 
+
+})
+
+Cypress.Commands.add ("collectit" , () =>{
+    cy.get('#container > app-navigation-bar > app-navigation-section.collect.ng-star-inserted > header > img') . should ('be.visible').click ()
+    
+    cy.wait(3000)
+    cy.log("Click on collect-it")
 
 
 })

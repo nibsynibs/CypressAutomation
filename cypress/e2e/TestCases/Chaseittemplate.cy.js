@@ -1,6 +1,6 @@
 ///<reference types = "cypress"/>
 
-import chasetemplate from "../PageObjects/ChaseitTemplates"
+import chasetemplate from "../PageObjects/ChaseitTemplates.cy"
 
 describe ("Know it Chase template", function () {
     it("chase templates", function () {
