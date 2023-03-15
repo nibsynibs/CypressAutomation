@@ -308,8 +308,7 @@ class GlobalDashboard extends storeallvariables {
       cy.log("click on More info")
               
       cy.xpath('//div[normalize-space ()="Company"]').click ()
-      cy.scrollTo('bottom')   
-      cy.wait(5000)
+            cy.wait(5000)
       cy.log("Click on  company")
 
       cy.xpath("//div[@class='modalCloseButton']") .click ()
@@ -318,21 +317,17 @@ class GlobalDashboard extends storeallvariables {
 
       //case count
 
-      cy.xpath("//div[normalize-space () ='Case Count']") .click ()
+      cy.xpath('//*[@id="dashboard"]/app-widget-container/ul/li[3]/ul/li[1]/app-widget-tab-group/ul/li[2]/button') .click ()
       cy.wait(3000)
-      cy.log("Click on CAse Count")
+       cy.log("Click on CAse Count")  
 
-      cy.xpath('//*[@id="dashboard"]/app-widget-container/ul/li[3]/ul/li[1]/app-widget-tab-group/app-widget-currency/div/span') .click ()
-      cy.wait(3000)
-      cy.log("click on More info")
-              
-      cy.xpath('//div[normalize-space ()="Company"]').click ()
-      cy.scrollTo('bottom')   
-      cy.wait(5000)
-      cy.log("Click on  company")
-
-      cy.xpath("//div[@class='modalCloseButton']") .click ()
-      cy.wait(3000)
+       cy.xpath('//*[@id="dashboard"]/app-widget-container/ul/li[3]/ul/li[1]/app-widget-tab-group/app-widget-counter/div') .click ()
+       cy.wait(2000)
+       cy.log('click on more info')
+                     
+        
+      cy.xpath('//*[@id="dashboard"]/app-modal/div/div/div[1]') .click ()
+        cy.wait(3000)
       cy.log("click on the Close button")
 
       //Received Payment

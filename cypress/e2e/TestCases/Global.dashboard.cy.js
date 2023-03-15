@@ -9,10 +9,10 @@ describe("Global Dashboard", () => {
         cy.login ()
         const gd = new GlobalDashboard ()
         gd.MainDashboard ()
-        gd.Calendar ()
+        // gd.Calendar ()
         // gd.Checkit()
-        gd.chaseit()
-        // gd.collectit ()
+        // gd.chaseit()
+        gd.collectit ()
 
 
 
