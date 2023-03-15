@@ -1,20 +1,5 @@
 ///<reference types ="cypress"/>
 
-import Userlicenseandadd from "../PageObjects/Users.cy"
-import ChaseDashboard from "../PageObjects/ChaseItDashboard.cy"
-import ChaseInvoices  from "../PageObjects/ChaseitInvoice.cy"
-import chasesettings from "../PageObjects/ChaseitSettings.cy" 
-import chasetemplate from "../PageObjects/ChaseitTemplates.cy"
-import yourschedule from "../PageObjects/ChaseitYourSchedule" 
-import Creditmonitoring from  "../PageObjects/CheckitCreditMonitoring.cy"
-import CheckitNotices from "../PageObjects/CheckitNotices.cy"
-import unsecuredcreditors from "../PageObjects/CheckitUnsecuredcreditors.cy"
-import companieshouse from "../PageObjects/CheckitCompanieshouse.cy"
-import  collectitCase from "../PageObjects/CollectitCases.cy"
-import CreditReports from "../PageObjects/CheckitCreditReports.cy"
-import Myaccounts from "../PageObjects/MyAccounts.cy"
-import mycomp from "../PageObjects/Mycompanies.cy"
-import MyInt from "../PageObjects/MyIntegration" 
 
 describe ("Regression suite", function () {
 
