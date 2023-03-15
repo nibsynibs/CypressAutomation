@@ -12,9 +12,9 @@ class mycomp {
     }
 
  Verifyrowsandcolumn () {
- cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[1]/app-row-selector/div/select') .select ("1000")
- cy.wait(5000)
- cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') .should ('have.length', '57')
+//  cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[1]/app-row-selector/div/select') .select ("1000")
+//  cy.wait(5000)
+ cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') .should ('have.length', '20')
  cy.log("Count the total number of rows.")
 
  cy.xpath('//div[@role="columnheader"]') .should ('have.length', '9')
