@@ -10,8 +10,11 @@ describe("Global Dashboard", () => {
         const gd = new GlobalDashboard ()
         gd.MainDashboard ()
         gd.Calendar ()
-        // gd.chaseit ()
-        // // cy.logout()
+        // gd.Checkit()
+        gd.chaseit()
+        // gd.collectit ()
+
+
 
 
 
