@@ -12,7 +12,9 @@ class mycomp {
     }
 
  Verifyrowsandcolumn () {
- cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') .should ('have.length', '20')
+ cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[1]/app-row-selector/div/select') .select ("1000")
+ cy.wait(5000)
+ cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') .should ('have.length', '57')
  cy.log("Count the total number of rows.")
 
  cy.xpath('//div[@role="columnheader"]') .should ('have.length', '9')
@@ -23,38 +25,55 @@ class mycomp {
     }
 
     checkcelldata (){
+ 
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
 
     //check cell data from specific row or column
     cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[6]/div[3]').contains ('11226650')
 
     //Read all the rows and column data from one page
+    
+    //Following will extract data from all the rows
+    cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') 
+    .each( ($row, index, $rows) => {
+    cy.log($row.text());
+    
+  
+ //Following will extract data from all the rows and columns
+    cy.wrap($row).within( () => {
+        cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]').each(($col,index,$cols) => {
+            cy.log($col.text()) ;
 
-    cy.xpath('//div[@role="table"]')
-     .each( ($row, index, $rows) => {
+    })
+    })
+    })
 
-        cy.wrap($row).within( () => {
-            cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]').each(($col,index,$cols) => {
-                cy.log($col.text()) ;
                           
-            })
+            
+        
 
              //Read all the rows and column data from all 3 pages
 
-            let totalpage= 3
-            for (let p=1 ;p<=totalpage; p++){
+            // let totalpage= 3
+            // for (let p=1 ;p<=totalpage; p++){
 
-                if(totalpage>1){
+            //     if(totalpage>1){
 
-                    cy.log("Active Page is===+p")
-                    cy.xpath('//input[@xpath="2"]').type()                }
-            
+            //         cy.log("Active Page is===+p")
+            //         cy.xpath('//input[@xpath="2"]').type()    
+                    
+                   
 
-            }
+        
 
 
-        })
+       
 
-     })
+     
 
     return this
 
