@@ -1,20 +1,22 @@
-///<reference types ="cypress"/>
-import GlobalDashboard from "../PageObjects/GlobalDashboard.cy"
+///<reference types="cypress"/>
 
-describe ("know-it test for global dashboard",function(){
-    it('create an account',function(){
+import GlobalDashboard from "../PageObjects/GlobDashboard.cy";
+
+
+describe("Global Dashboard", () => {
+    it("Global Dashboard data test" , function () {
 
         cy.login ()
-
-        const gd = new GlobalDashboard () ;
-        gd.Dashboard ()
-        // gd.Calendar ()
-        gd.checkit ()
+        const gd = new GlobalDashboard ()
+        gd.MainDashboard ()
+        gd.Calendar ()
         // gd.chaseit ()
-        // gd.collectit ()
+        // // cy.logout()
 
-        cy.logout ()
-    
+
+
+
 
     })
+
 })

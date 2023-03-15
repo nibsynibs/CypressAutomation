@@ -19,12 +19,50 @@ class ChaseDashboard {
         cy.get("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > ul > li:nth-child(1) > a").click ()
         cy.log("click on the dashboard")
         cy.wait(3000)
-
-       
-        
+      
 
         return this
     }
+
+    Verifycelldata () {
+    
+        // cy.xpath('//div[@role="rowgroup"]') .should ('have.length' , '27')
+        // cy.log("Total number of rows")
+
+        cy.xpath('//div[@class="flex-table header"]') .should ('have.length' , '9')
+        cy.log( 'Total number of columns')
+
+        return this
+
+    }
+
+    Checkcelldata () {
+
+        cy.xpath('//*[@id="agedDebtorsList"]/div/app-list/app-table/div/div[5]/div[4]').contains ("£3,277,832.80")
+        cy.log("Verify that value in a specific row")
+
+        //Read all the data  from the rows and columns
+
+        cy.xpath('//div[@role="table"]') . each (($row,index,$rows) => {
+        cy.log($row.text ()) ;
+
+        cy.wrap($row) .within ( () => {
+        cy.xpath('//div[@role ="cell"]') . each ( ($col, index,$cols) =>{
+        cy.log($col.text())
+
+
+            })
+
+
+        })
+
+
+       })
+
+     return this
+
+    }
+   
 
     AgedDebtor () {
 
