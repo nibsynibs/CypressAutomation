@@ -8,7 +8,7 @@ describe ("My Accounts section" , function () {
 
         cy.login ()
         const ma = new Myaccounts ()
-        ma.Accounts ("account2023-16@test.com", "James", "Jones", "0236589778")
+        ma.Accounts ("account2023-106@test.com", "James", "Jones", "0236589778")
         ma.ChangePassword ("Kit@12345678","Kit@12345678","Kit@12345678")
         cy.logout()
         

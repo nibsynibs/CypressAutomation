@@ -31,16 +31,16 @@ class Markeptplacepurchase  {
         cy.wait(3000)
         cy.log("click on checkout")
 
-            cy.get("#form-customer-name").type("N Pkh")
-            cy.get("#form-customer-address").type("76 Roseby Avenue Manchester")
-            cy.get("#form-customer-postcode").type("M63X 7TH")
-            cy.wait(3000)
-            cy.get("#hostedfield-frame-1").type("4543 0599 9999 9982")
+            // cy.get("#form-customer-name").type("N Pkh")
+            // cy.get("#form-customer-address").type("76 Roseby Avenue Manchester")
+            // cy.get("#form-customer-postcode").type("M63X 7TH")
+            // cy.wait(3000)
+            // cy.xpath().type("4543 0599 9999 9982")
                     
                     
-            cy.get("#form-card-start-date-hostedfield > input").type("1220")
-            cy.get("#form-card-expiry-date-hostedfield > input.hostedfield.hf-empty.hf-user-valid.hf-placeholder-shown.hf-required.hf-enabled.hf-invalid").type("1225")
-            cy.get("#form-card-cvv-hostedfield > input").type("110")
+            // cy.get("#form-card-start-date-hostedfield > input").type("1220")
+            // cy.get("#form-card-expiry-date-hostedfield > input.hostedfield.hf-empty.hf-user-valid.hf-placeholder-shown.hf-required.hf-enabled.hf-invalid").type("1225")
+            // cy.get("#form-card-cvv-hostedfield > input").type("110")
       
         return this
 

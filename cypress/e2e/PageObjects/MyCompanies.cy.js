@@ -89,6 +89,7 @@ class mycomp {
         cy.log("Click on the company name")
         cy.wait(3000)
         cy.go ("back")
+        cy.wait(4000)
 
         return this
     }
@@ -108,14 +109,14 @@ class mycomp {
     }
 
     Alerts () {
+       cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[3]/div[9]/div/span') .click ()
+       cy.xpath("//button[@title='CLEAR ISSUE']") .click ()
+       cy.xpath('//*[@id="myCompaniesList"]/app-list/app-modal[1]/div/div/div').click ()
 
-        cy.get("#myCompaniesList > app-list > app-table > div > div:nth-child(3) > div.field_hasValidationIssues.flex-row.ng-star-inserted > div > span") .click ()
-        cy.wait(2000)
-        cy.log("click on issues")
+       cy.log("Click on issues, clear and then close the pop up ")
 
-        cy.get("#myCompaniesList > app-list > app-modal.modal-centre.width-unset.height-auto.validationModal.ng-star-inserted > div > div > app-list > app-table > div > div:nth-child(2) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
-        cy.get("#myCompaniesList > app-list > app-modal.modal-centre.width-unset.height-auto.validationModal.ng-star-inserted > div > div > app-list > app-table > div > div:nth-child(3) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
-        cy.get("#myCompaniesList > app-list > app-modal.modal-centre.width-unset.height-auto.validationModal.ng-star-inserted > div > div > div") .click ()
+    return this
+        
     }
 
 
@@ -123,6 +124,8 @@ class mycomp {
         cy.get ("#keywords").type(companyname)  
         cy.wait(3000)
         cy.log("Search for company name")
+        cy.get ("#keywords").clear ()
+        cy.wait(3000)
 
         return this
     }
