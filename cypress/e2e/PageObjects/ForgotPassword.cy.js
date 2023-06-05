@@ -21,7 +21,7 @@ class ResetPassword {
 
         Reset(email) {
             cy.get ("#email").type (email)
-            cy.wait(3000)
+            cy.wait(10000)
             cy.log("Enter email address to get the reset link")
 
             cy.get("#forgotPasswordForm > form > div.formButtons > app-button > button").should ("be.visible").should ("be.enabled").click ()

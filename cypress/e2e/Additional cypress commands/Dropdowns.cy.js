@@ -35,8 +35,9 @@ describe ("drop-downs" , () =>{
         
         cy.visit("https://www.wikipedia.org/")
         cy.xpath('//*[@id="searchInput"]').type("Scotland")
+        cy.wait(3000)
         cy.xpath('//div[@class="suggestion-text"]') .should ('have.length', 6)
-        cy.xpath('//div[@class="suggestion-text"]') .contains ("Scotland").click ()
+        cy.xpath('//div[@class="suggestion-text"]') .contains ("Scotland national football team").click ()
 
 
 

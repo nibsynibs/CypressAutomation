@@ -5,28 +5,28 @@ class CreditReports {
 CreditReport (compname) {
 
     cy.checkit ()
-    cy.wait (3000)
+    cy.wait (5000)
     cy.on('uncaught:exception', () => {
 
         return false
     })
 
 cy. get ("#container > app-navigation-bar > app-navigation-section.check.ng-star-inserted > ul > li:nth-child(2) > a") .click ()
-cy.wait (3000)
+cy.wait (10000)
 cy.log ("click on Check-it and then on Credit Reports")
 
 cy.get ("#creditReportsListTable > app-list > app-table > div > div.listFilters.ng-star-inserted > a").click ()
-cy.wait (3000)
+cy.wait (5000)
 cy.log ("click on New Credit Reports")
 
 
 cy.get ("#creditSafeForm > div:nth-child(1) > div:nth-child(1) > input") . type (compname)
 cy.get ("#creditSafeForm > div:nth-child(3) > div > button") .click ()
-cy.wait (3000)
+cy.wait (1000)
 cy.log ("Enter company name and click Search")
 
 cy.get ("#creditSafeList > app-list > app-table > div > div:nth-child(3) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li > app-button > button").click ()
-cy.wait (3000)
+cy.wait (10000)
 cy.log("purchase credit report")
 
 return this
@@ -37,16 +37,16 @@ return this
 Repurchase (compname) {
 
 cy.get ("#creditReportsListTable > app-list > app-table > div > div.listFilters.ng-star-inserted > a").click ()
-cy.wait (3000)
+cy.wait (5000)
 cy.log ("click on New Credit Reports")
 
 cy.get ("#creditSafeForm > div:nth-child(1) > div:nth-child(1) > input") . type (compname)
 cy.get ("#creditSafeForm > div:nth-child(3) > div > button") .click ()
-cy.wait (3000)
+cy.wait (5000)
 cy.log ("Enter company name and click Search")
 
 cy.get ("#creditSafeList > app-list > app-table > div > div:nth-child(3) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li:nth-child(1) > app-button > button") .click ()
-cy.wait (3000)
+cy.wait (5000)
 cy.log ("purchase the same credit report again")
 
 return this 
@@ -55,16 +55,16 @@ return this
 ViewCreditReport (compname){
 
     cy.get ("#creditReportsListTable > app-list > app-table > div > div.listFilters.ng-star-inserted > a").click ()
-    cy.wait (3000)
+    cy.wait (5000)
     cy.log ("click on New Credit Reports")
     
     cy.get ("#creditSafeForm > div:nth-child(1) > div:nth-child(1) > input") . type (compname)
     cy.get ("#creditSafeForm > div:nth-child(3) > div > button") .click ()
-    cy.wait (3000)
+    cy.wait (5000)
     cy.log ("Enter company name and click Search")
     
     cy.get ("#creditSafeList > app-list > app-table > div > div:nth-child(3) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li:nth-child(2) > app-button > button") .click ()
-    // cy.wait (3000)
+    cy.wait (3000)
     cy.log ("View credit report")
 
     cy.get ("#tabs > div > div.tabsContent > ul > app-tab:nth-child(1) > li") .scrollIntoView({duration :2000})

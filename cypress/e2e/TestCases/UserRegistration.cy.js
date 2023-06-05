@@ -4,8 +4,11 @@ describe ("user registreation" , function () {
     it ("New Registration",() => {
 
         const re = new Registration ()
-        re.logintoURL ()
-        re.UserReg ("Jack" ,"Fruit" ,"account2023-105@test.com" , "Kit@12345678")
+        re.LogintoURL ()
+        re.Createanaccount ()
+        re.Email ("newknow-itautomationtest@test.com")
+        re.CompanyandUserDetail ("Kit@12345678")
+        re.Optionalfields ()
 
 
 

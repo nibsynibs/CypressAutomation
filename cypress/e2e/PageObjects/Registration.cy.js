@@ -1,72 +1,160 @@
 class Registration {
 
-   logintoURL (){
+  LogintoURL () {
 
     cy.visit ("https://test.know-it.co.uk/")
-    cy.url().should("contain", "know-it")
+    cy.url().should ('eq',"https://test.know-it.co.uk/login?returnUrl=%2Fmain-dashboard" )
+             .and ('contain',"login")
+             .and ('include',"know-it.co.uk")
+    
+   cy.wait(2000)
+   cy.log("Enter the url")
+  }
 
+  Createanaccount () {
 
+    cy.on ('uncaught:exception', function () {
 
-   }
+      return false
+    
+    })
 
-    UserReg(fname,lname, email, password) {
+    cy.xpath("//a[@class='ng-star-inserted']") .should ('be.visible')
+                                               .and('contain', "Create an account") .click ()
+                                                 
+  cy.wait(3000)
+    cy.log("Click on Create an account link")
 
-      cy.xpath('//*[@id="signinBox"]/div[3]/ul/li[1]/a') .click ()
-      cy.xpath ('//*[@id="firstname"]').type (fname)
-      cy.xpath ('//*[@id="firstname"]').should ("have.value" , fname)
-      .and("be.visible")
-      cy.log("Enter First name")
+  }
 
-      cy.xpath('//*[@id="lastname"]').type (lname) 
-      cy.xpath('//*[@id="lastname"]').should("have.value", lname)
-      .and("be.visible")
-      .and("not.contain" ,"firstname")
-      cy.log("Enter last name")
+  Email (email) {
 
-      cy.xpath('//*[@id="email"]').type(email)
-      cy.xpath('//*[@id="email"]').should ("have.value" , email)
-      .and("be.visible")
-      
-      cy.log("Enter email address")
+    cy.on('uncaught:exception',() => {
+      return false
+    })
 
-      cy.xpath ('//*[@id="password"]') .type (password) .should ("have.value" , password)
-      .and("be.visible")
-      cy.log("Enter password")
-      
+    cy.xpath("//input[@id='email']") .type(email)
+    cy.xpath("//input[@id='email']").should ('be.visible')
+                                    .and('be.enabled')
+                                    .and ("have.value" , "newknow-itautomationtest@test.com")
+                                    
+                                    
 
+    cy.wait(3000)
+    cy.log("Enter email address")
 
-      cy.xpath ('//*[@id="registerForm"]/form/div[1]/app-checkbox/div/label/span') .click()
-       .should ("be.visible")
-      cy.log("Click on the checkbox")
-      
-     cy.xpath('//*[@id="registerForm"]/form/div[2]/app-button/button') .click ()
-     .should ("be.visible")
-     .and ("contain.text" , "Create Account")
-
-     return this
-
+    cy.xpath("//button[@type='submit']").should ("be.visible")
+                                        .and ("be.enabled")
+                                        
+                                        .and ("have.text", "Continue") .click ()
+                                        // .and('contain', "Continue")
+                                        
+    cy.wait(3000)
+    cy.log("Click on the continue button")
+    
     }
-}
 
-export default Registration
+  CompanyandUserDetail (password) {
      
+    cy.on('unhandled:exception', () => {
+      return false
 
+    })
 
+    cy.xpath("//input[@id='companynameLookup']") .type ("freeplan")
+    cy.wait(3000)
+    cy.xpath("//li[@class='companiesHouseResult ng-star-inserted']") .should ("have.length", 5)
+    cy.xpath("//li[@class='companiesHouseResult ng-star-inserted']") .contains("FREEPLAN LTD") .click({force: true})
+    cy.log("Select company from the companies house dropdown")
 
+    cy.xpath('//*[@id="firstname"]') .type ("Nibs")
+    cy.wait(3000)
+    cy.xpath('//*[@id="firstname"]') . should ("be.visible")
+                                         .and("have.value", "Nibs")
+                                        
 
-
-
-
-
-
-
-
-       
-         
-
-
+    cy.log("Enter first name")
 
     
+    cy.xpath("//input[@id='lastname']") .type ("Pkh" , {force:true})
+    cy.xpath("//input[@id='lastname']") . should ("be.visible")
+                                         .and("have.value", "Pkh")
+                                         
+      
+      cy.log("Enter last name")
+
+
+
+    cy.xpath("//input[@id='password']") .type(password)
+    cy.xpath("//input[@id='password']").should ("have.value" , "Kit@12345678")
+                                       .and ("contain", "Kit@12345678")
+  
+   cy.log("Enter password")
+
+   cy.xpath("//button[@type='submit']").should ("be.visible")
+                                       .and("have.text", "continue")
+                                      .and ("include","continue").click ()
+cy.wait(3000)
+cy.log("Click on the continue button")
+
+    
+   }
+
+   Optionalfields () {
+
+    cy.on ('unhandled:exception', function () {
+
+      return false
+
+    })
+
+  cy.xpath("//input[@id='contactPhoneNumber']") .type("0326584558")
+  cy.xpath("//div[@class='xeroService ng-star-inserted']") .check ()
+  cy.xpath("//button[@type='submit']") .click ()
+
+  }
+ }
+
+  export default Registration
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-03-30T13:15:10.329Z",
+    "end": "2023-03-30T13:15:18.289Z",
+    "duration": 7960,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "efa569b4-aea6-418c-b5c9-dd9f4fbbadd7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\TestCases\\UserRegistration.cy.js",
+      "file": "cypress\\e2e\\TestCases\\UserRegistration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "40dcb6c5-2f27-4c66-b240-363304009e5d",
+          "title": "user registreation",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "New Registration",
+              "fullTitle": "user registreation New Registration",
+              "timedOut": null,
+              "duration": 6019,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const re = new _Registration.default();\nre.logintoURL();\nre.UserReg(\"Jack\", \"Fruit\", \"account2023-008@test.com\", \"Kit@12345678\");",
+              "err": {},
+              "uuid": "6b53073d-2584-4d9d-9fa3-36bd179e8422",
+              "parentUUID": "40dcb6c5-2f27-4c66-b240-363304009e5d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6b53073d-2584-4d9d-9fa3-36bd179e8422"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6019,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

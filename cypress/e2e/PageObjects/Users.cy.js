@@ -31,7 +31,7 @@ class Userlicenseandadd {
 
 
          cy.get ("#productList > div > div > button"). click ()
-         cy.wait(3000)
+         cy.wait(10000)
          cy.log ("Click checkout")
 
          for(let i = 0 ; i<=10 ; i++) {
@@ -41,7 +41,7 @@ class Userlicenseandadd {
          cy.log("Add the quantity x 9")
 
          cy.get("#basketBox > app-button > button") .click ()
-         cy.wait(3000)
+         cy.wait(10000)
          cy.log ("Click Checkout")
 
 
@@ -60,11 +60,11 @@ class Userlicenseandadd {
 
         cy.get ("#userSectionHeader > div.buttons > app-button.ng-star-inserted > button").click ()
         cy.get("#userModal > div > div > div.cancelButton > p").click ()
-        cy.wait(2000)
+        cy.wait(10000)
         cy.log("Click on Add User and then cancel")
 
         cy.get ("#userSectionHeader > div.buttons > app-button.ng-star-inserted > button").click ()
-        cy.wait(2000)
+        cy.wait(10000)
         cy.log("Click on Add User ")
 
         cy.get("#firstname") .type (fname)
@@ -75,7 +75,7 @@ class Userlicenseandadd {
         cy.get("#adduserForm > form > div.ng-star-inserted > app-listfield > section > app-list > app-table > div > div:nth-child(2) > div.field_actions.flex-row.ng-star-inserted > app-actions > ul > li > span").click ()
         cy.get("#adduserForm > form > div.formButtons > app-button > button").click ()
         
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("Add user")
 
        return this
