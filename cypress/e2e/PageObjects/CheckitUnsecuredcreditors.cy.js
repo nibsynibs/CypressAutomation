@@ -6,7 +6,7 @@ class unsecuredcreditors {
     useccreditors (compname) {
 
         cy.checkit ()
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("click on unsecured creditors")
 
         cy.on('uncaught:exception', (err, runnable) => {

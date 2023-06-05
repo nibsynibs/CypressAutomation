@@ -11,11 +11,11 @@ class chasesettings {
         })
 
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()
-        cy.wait(2000)
+        cy.wait(10000)
         cy.log("click on Chase-it")
 
         cy.get("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > ul > li:nth-child(4) > a").click ()
-        cy.wait(2000)
+        cy.wait(10000)
         cy.log("Click on settings")
 
         return this
@@ -25,7 +25,7 @@ class chasesettings {
     // SelectLedger () {
 
     //    cy.get("#ledgerSelector").select (1)
-    //    cy.wait(2000)
+    //    cy.wait(10000)
     //    cy.log("Select ledger")
 
     //    return this

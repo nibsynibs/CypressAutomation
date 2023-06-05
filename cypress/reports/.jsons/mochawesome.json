@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-03-16T10:48:04.781Z",
-    "end": "2023-03-16T10:49:18.847Z",
-    "duration": 74066,
+    "start": "2023-03-30T13:15:10.329Z",
+    "end": "2023-03-30T13:15:18.289Z",
+    "duration": 7960,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,49 +18,49 @@
   },
   "results": [
     {
-      "uuid": "b8b38676-67c8-4db0-9ae7-4fb2945c421e",
+      "uuid": "efa569b4-aea6-418c-b5c9-dd9f4fbbadd7",
       "title": "",
-      "fullFile": "cypress\\e2e\\TestCases\\Myaccount.cy.js",
-      "file": "cypress\\e2e\\TestCases\\Myaccount.cy.js",
+      "fullFile": "cypress\\e2e\\TestCases\\UserRegistration.cy.js",
+      "file": "cypress\\e2e\\TestCases\\UserRegistration.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "7a6c20b1-81ae-48b0-ae4e-6773d5275d15",
-          "title": "My Accounts section",
+          "uuid": "40dcb6c5-2f27-4c66-b240-363304009e5d",
+          "title": "user registreation",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Accounts and password",
-              "fullTitle": "My Accounts section Accounts and password",
+              "title": "New Registration",
+              "fullTitle": "user registreation New Registration",
               "timedOut": null,
-              "duration": 71433,
+              "duration": 6019,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.login();\nconst ma = new _MyAccounts.default();\nma.Accounts(\"account2023-16@test.com\", \"James\", \"Jones\", \"0236589778\");\nma.ChangePassword(\"Kit@12345678\", \"Kit@12345678\", \"Kit@12345678\");\ncy.logout();",
+              "code": "const re = new _Registration.default();\nre.logintoURL();\nre.UserReg(\"Jack\", \"Fruit\", \"account2023-008@test.com\", \"Kit@12345678\");",
               "err": {},
-              "uuid": "cb345aa7-54ec-4e07-9457-26d3e4b59f63",
-              "parentUUID": "7a6c20b1-81ae-48b0-ae4e-6773d5275d15",
+              "uuid": "6b53073d-2584-4d9d-9fa3-36bd179e8422",
+              "parentUUID": "40dcb6c5-2f27-4c66-b240-363304009e5d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cb345aa7-54ec-4e07-9457-26d3e4b59f63"
+            "6b53073d-2584-4d9d-9fa3-36bd179e8422"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 71433,
+          "duration": 6019,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,11 @@
     },
     "marge": {
       "options": {
-        "reportDir": "reports",
+        "reportDir": "cypress\\reports\\.jsons",
+        "charts": true,
+        "reportPageTitle": "My Test Suite",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
         "overwrite": false,
         "html": false,
         "json": true

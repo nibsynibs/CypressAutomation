@@ -11,10 +11,10 @@ describe ("My comp" , function () {
         mc.Verifyrowsandcolumn ()
         mc.checkcelldata ()
         mc.SelectCompany ()
-        // mc. Alerts ()
+        mc. Alerts ()
         mc.Row()
         mc.Companysearch ("Basket Case") 
-        // mc.switchview ("Ridgeway University")
+        // mc.switchview ("Basket Case") 
         cy.logout ()
 
        

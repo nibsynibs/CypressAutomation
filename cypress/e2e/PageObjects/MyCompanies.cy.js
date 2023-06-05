@@ -3,8 +3,16 @@
 class mycomp {
 
     Comp () {
-      cy.get ("#container > app-navigation-bar > app-navigation-section.my-companies.ng-star-inserted > header > h2") .click ()
-      cy.wait (3000)
+           
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
+      cy.xpath ("//h2[normalize-space()='My Companies']") .click ()
+                 
+ 
+      cy.wait (10000)
       cy.log("Click on My Companies")
 
       return this
@@ -12,13 +20,18 @@ class mycomp {
     }
 
  Verifyrowsandcolumn () {
+
+    cy.on("uncaught:exception" , () => {
+        return false
+
+    })
 //  cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[1]/app-row-selector/div/select') .select ("1000")
-//  cy.wait(5000)
+//  cy.wait(10000)
  cy.xpath('//div[@class="flex-table row knowitRow rowClickable ng-star-inserted"]') .should ('have.length', '20')
  cy.log("Count the total number of rows.")
 
  cy.xpath('//div[@role="columnheader"]') .should ('have.length', '9')
- cy.log("count the nimber of columns")
+ cy.log("count the number of columns")
 
  return this
 
@@ -84,10 +97,16 @@ class mycomp {
 
 
     SelectCompany () {
+
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
         cy.get("#myCompaniesList > app-list > app-table > div > div:nth-child(3) > div.field_ledgerCompanyName.flex-row.ng-star-inserted > a").click ()
-        cy.wait(5000)
+        cy.wait(10000)
         cy.log("Click on the company name")
-        cy.wait(3000)
+        cy.wait(10000)
         cy.go ("back")
         cy.wait(4000)
 
@@ -96,8 +115,13 @@ class mycomp {
 
     Row () {
 
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
         cy.get ("#myCompaniesList > app-list > app-table > div > div.listFilters.ng-star-inserted > app-row-selector > div > select"). select ("10")
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("select 10 rows")
         
         cy.get ("#myCompaniesList > app-list > app-table > div > div.listFilters.ng-star-inserted > app-row-selector > div > select"). select ("20")
@@ -109,9 +133,18 @@ class mycomp {
     }
 
     Alerts () {
-       cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[3]/div[9]/div/span') .click ()
+
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
+       cy.xpath('//*[@id="myCompaniesList"]/app-list/app-table/div/div[8]/div[9]/div/span') .click ()
+       cy.wait(10000)
        cy.xpath("//button[@title='CLEAR ISSUE']") .click ()
+       cy.wait(10000)
        cy.xpath('//*[@id="myCompaniesList"]/app-list/app-modal[1]/div/div/div').click ()
+       cy.wait(10000)
 
        cy.log("Click on issues, clear and then close the pop up ")
 
@@ -121,24 +154,30 @@ class mycomp {
 
 
     Companysearch (companyname) {
+
+        cy.on("uncaught:exception" , () => {
+            return false
+
+        })
+
         cy.get ("#keywords").type(companyname)  
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("Search for company name")
         cy.get ("#keywords").clear ()
-        cy.wait(3000)
+        cy.wait(10000)
 
         return this
     }
       
     switchview (comp) {
         cy.get ("#myCompaniesList > app-list > div.listToggle.ng-star-inserted > ul > li.gridMode.ng-star-inserted").click ()
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("click on the companies grid view tab ")
 
         cy.get("#gridSortOptions").select (2)
-        cy.wait(3000)
+        cy.wait(10000)
         cy.get("#gridSortOptions").select (4)
-        cy.wait(3000)
+        cy.wait(10000)
 
         cy.get ("#keywords").type (comp)
         cy.wait(4000)

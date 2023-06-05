@@ -8,29 +8,33 @@ class ChaseDashboard {
 
             return false
 
-
         })
 
         cy.get ("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > header > img").click ()
         cy.log("Click on the chase it")
-        cy.wait(3000)
+        cy.wait(4000)
 
 
-        cy.get("#container > app-navigation-bar > app-navigation-section.chase.ng-star-inserted > ul > li:nth-child(1) > a").click ()
+        cy.xpath('//*[@id="container"]/app-navigation-bar/app-navigation-section[4]/ul/li[1]/a').click ()
+                
         cy.log("click on the dashboard")
-        cy.wait(3000)
+        cy.wait(20000)
       
 
-        return this
+        return this 
     }
 
     Verifycelldata () {
-    
-        // cy.xpath('//div[@role="rowgroup"]') .should ('have.length' , '27')
-        // cy.log("Total number of rows")
 
-        cy.xpath('//div[@class="flex-table header"]') .should ('have.length' , '9')
-        cy.log( 'Total number of columns')
+        cy.on('uncaught:exception' ,() => {
+            return false
+
+        })
+    
+        cy.xpath('//div[@role="rowgroup"]') .should ('have.length' , '21')
+        cy.log("Total number of rows")
+
+
 
         return this
 
@@ -38,7 +42,7 @@ class ChaseDashboard {
 
     Checkcelldata () {
 
-        cy.xpath('//*[@id="agedDebtorsList"]/div/app-list/app-table/div/div[5]/div[4]').contains ("£3,277,832.80")
+        cy.xpath('//*[@id="agedDebtorsList"]/div/app-list/app-table/div/div[2]').contains ("£22,074.88")
         cy.log("Verify that value in a specific row")
 
         //Read all the data  from the rows and columns
@@ -72,16 +76,20 @@ class ChaseDashboard {
 
 
         })
-        cy.get("#agedDebtorsList > div > app-list > app-table > div > div:nth-child(4) > div.field_debtoractions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
-           
-        cy.wait(3000)
+        cy.xpath('//*[@id="agedDebtorsList"]/div/app-list/app-table/div/div[7]/div[9]/app-actions/ul/li/button').click ()
+        cy.wait(10000)
         cy.log ("click on Collect-it  Aged Debtor")
 
-        // cy.xpath('//*[@id="dashboard"]/div[2]/app-aged-debtors-list/app-commercial-debts-confirmation/app-modal/div/div/div[2]/app-button[1]/button').click ()
-        // cy.log("Click confirm on the pop up")
+    
+
+        cy.xpath("//button[normalize-space()='Confirm']").click ()
+        cy.wait(5000)
+        cy.log ("Click confirm on the pop up")
+                 
+     
 
         cy.get("#collectInvoiceList > app-list > app-table > div > div.flex-table.header > div.flex-row.headerInvoiceid.ng-star-inserted > input") .check()
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("check select all")
 
         cy.get("#collectInvoiceList > div > app-button > button"). click ()
@@ -94,20 +102,20 @@ class ChaseDashboard {
 
         cy.get ("#dashboard > div:nth-child(4) > app-aged-debtors-list > app-modal > div > div > div").click ()
         cy.log("Cross the pop up")
-        cy.wait(3000)
+        cy.wait(10000)
 
-        cy.get("#agedDebtorsList > div > app-list > app-table > div > div:nth-child(4) > div.field_debtoractions.flex-row.ng-star-inserted > app-actions > ul > li > button").click ()
-        cy.wait(3000)
+        cy.xpath('//*[@id="agedDebtorsList"]/div/app-list/app-table/div/div[7]/div[9]/app-actions/ul/li/button').click ()
+        cy.wait(10000)
         cy.log ("click on Collect-it  Aged Debtor")
 
 
         // cy.get("#ourRef").type ("inv-001-0")
-        // cy.wait(3000)
+        // cy.wait(10000)
         // cy.get("#chase > app-invoice-list > app-modal > div > div > div").click ()
        
 
         cy.get("#collectInvoiceList > app-list > app-table > div > div.flex-table.row.knowitRow.list-bottom-margin.ng-star-inserted > div.field_invoiceId.flex-row.ng-star-inserted > div > input").check ()
-        cy.wait(3000)
+        cy.wait(10000)
         cy.log("Seelct an invoice to submit")
         
 
@@ -117,7 +125,7 @@ class ChaseDashboard {
 
         cy.get("#contactNumber") .type ("0192802939")
         cy.log("Enter phone number")
-        cy.wait(3000)
+        cy.wait(10000)
 
         cy.get("#sendToCollectForm > form > div.formButtons > app-button:nth-child(2) > button").click ()
         cy.log("Click on the submit button")

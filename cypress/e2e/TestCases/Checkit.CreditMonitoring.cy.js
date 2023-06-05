@@ -9,7 +9,7 @@ describe ("Credit monitoring",function () {
         cy.login ()
        
         const cm = new Creditmonitoring ()
-        cm.monitoring ("LEW PLUMBING LTD")
+        cm.monitoring ("CITY LIMOUSINES")
         cy.logout ()
 
 
