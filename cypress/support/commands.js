@@ -30,17 +30,17 @@
 
 Cypress.Commands.add ("login", () => {
     cy.visit("https://test.know-it.co.uk")
-    cy.viewport (2000,1000)
-    cy.get ("#email").type ("account2023-106@test.com")
+    cy.viewport (3000,1500)
+    cy.get ("#email").type ("newautomationtest@test.com")
     cy.get ("#password").type('Kit@12345678')
     cy.get  ("#loginForm > form > div.formButtons > app-button > button").click ()
-    cy.wait (20000)
+    cy.wait (10000)
 })
 
 
 Cypress.Commands.add ("logout", () => {
     cy.get ("#container > app-navigation-bar > header.noParentItem.logoutLink > h2").click()
-    cy.wait (5000)
+    cy.wait (10000)
    
 })
 
@@ -68,6 +68,7 @@ Cypress.Commands.add ("collectit" , () =>{
 
 })
 
+ 
 
 
 

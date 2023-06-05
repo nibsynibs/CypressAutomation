@@ -7,8 +7,8 @@ describe ("free-pan subscription", function () {
 
 cy.login()
 const su = new SusbcriptionDowngrade ()
-//su.Createsubscription ()
-//su.ConnectLedger ()
+su.Createsubscription ()
+su.ConnectLedger ()
 su.CheckitDashboard ()
 cy.logout ()
 

@@ -8,11 +8,11 @@ describe ("Know-it Chase dashboard", function () {
 
         cy.login ()
         const ch = new ChaseDashboard ()
-        // ch.Dashboard ()
+        ch.Dashboard ()
         ch.Verifycelldata ()
         ch.Checkcelldata ()
-        // ch.AgedDebtor ()
-        // cy.logout ()
+        ch.AgedDebtor ()
+        cy.logout ()
 
 
     })

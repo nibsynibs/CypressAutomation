@@ -6,16 +6,9 @@ describe ("Check-it Dashboard", () => {
         cy.login()
 
         const CD = new CheckitDashboard ()
-        CD.Dashboard ()
-        CD.CreditMonitoring ()
-        CD.CreditReports ()
-        CD.UnsecuredCreditors ()
-        CD. GazetteNotices ()
-        cy.logout()
-       
-
-
-
+        CD.CheckDashboard () ;
+        CD.DisableData ()
+        
     })
 
 

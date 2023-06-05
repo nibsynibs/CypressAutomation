@@ -10,7 +10,7 @@ class companieshouse {
         })
 
         cy.checkit ()
-        cy.wait(3000)
+        cy.wait(10000)
 
         // cy.on('uncaught:exception', (err, runnable) => {
 
@@ -18,11 +18,11 @@ class companieshouse {
         // })
 
         cy.get ("#container > app-navigation-bar > app-navigation-section.check.ng-star-inserted > ul > li:nth-child(5) > a") .click ()
-        cy.wait (2000)
+        cy.wait (5000)
         cy.log ("click on companies house")
 
         cy.get ("#keywords") .type (compname)
-        cy.wait (2000)
+        cy.wait (5000)
 
         cy.get ("#companiesHouseListTable > app-list > app-table > div > div:nth-child(3) > div.field_url.flex-row.ng-star-inserted > a"). click  ()
         cy.wait (5000)

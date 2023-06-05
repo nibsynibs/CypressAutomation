@@ -14,7 +14,7 @@ describe ("My comp" , function () {
         mc. Alerts ()
         mc.Row()
         mc.Companysearch ("Basket Case") 
-        mc.switchview ("Ridgeway University")
+        // mc.switchview ("Basket Case") 
         cy.logout ()
 
        
